@@ -1,94 +1,85 @@
 const blueprint = {
-  "name": "Sheet1",
-  "slug": "sheet_1",
+  "name": "SoldLog",
+  "slug": "sold_log",
   "fields": [
     {
-      "key": "customer",
-      "label": "Customer",
-      "type": "string"
-    },
-    {
-      "key": "store",
+      "key": "Dealer",
       "label": "Store",
       "type": "string"
     },
     {
-      "key": "date_sold",
-      "label": "Date Sold",
-      "type": "string"
-    },
-    {
-      "key": "vehicle_1_status",
+      "key": "Inventory Type",
       "label": "Vehicle 1 Status",
       "type": "string"
     },
     {
-      "key": "vehicle_1_year",
+      "key": "Year",
       "label": "Vehicle 1 Year",
       "type": "number"
     },
     {
-      "key": "vehicle_1_make",
+      "key": "Make",
       "label": "Vehicle 1 Make",
       "type": "string"
     },
     {
-      "key": "vehicle_1_model",
+      "key": "Model",
       "label": "Vehicle 1 Model",
       "type": "string"
     },
     {
-      "key": "vehicle_1_stock_number",
+      "key": "Sold Date",
+      "label": "Date Sold",
+      "type": "date"
+    },
+    {
+      "key": "Stock Number",
       "label": "Vehicle 1 Stock Number",
       "type": "string"
     },
     {
-      "key": "vehicle_1_vin",
+      "key": "VIN",
       "label": "Vehicle 1 VIN",
       "type": "string"
     },
     {
-      "key": "customer_first_name",
+      "key": "First Name",
       "label": "Customer First Name",
       "type": "string"
     },
     {
-      "key": "customer_last_name",
+      "key": "Last Name",
       "label": "Customer Last Name",
       "type": "string"
     },
     {
-      "key": "cell_phone",
+      "key": "Cell Phone",
       "label": "Cell Phone",
-      "type": "number"
-    },
-    {
-      "key": "home_phone",
-      "label": "Home Phone",
       "type": "string"
     },
+    // "Middle Name", "Daytime Phone", "Evening Phone", "Alt Email", "Buyer Birth Date", "Gender" fields can be added here if needed
     {
-      "key": "customer_email",
+      "key": "email",
       "label": "Customer Email",
       "type": "string"
     },
     {
-      "key": "city",
+      "key": "City",
       "label": "City",
       "type": "string"
     },
     {
-      "key": "state",
+      "key": "State",
       "label": "State",
       "type": "string"
     },
     {
-      "key": "zip",
+      "key": "Postal Code",
       "label": "Zip",
-      "type": "number"
+      "type": "string"
     },
     {
-      "key": "dms_total_gross",
+      "key": "Total Gross",
       "label": "DMS Total Gross",
       "type": "number"
     }
