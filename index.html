@@ -9,23 +9,44 @@
   <script src="./emailValidationHook.js"></script>
 </head>
 <body>
-  <script>
-    window.onload = function() {
-      FlatFileJavaScript.startFlatfile({
-        publishableKey: "pk_2ea17d18da7e4a2c88d1f781cfaba548",
-        sheet: blueprint,
-        hooks: {
-          record: (record) => window.emailValidationHook(record)
-        },
-        onSubmit: async ({ sheet }) => {
-          const data = await sheet.allData()
-          console.log('onSubmit', data)
-        },
-        spaceBody: {
-          namespace: "portal",
-        },
-      })
-    }
-  </script>
+<script>
+  window.onload = function() {
+    FlatFileJavaScript.startFlatfile({
+      publishableKey: "pk_2ea17d18da7e4a2c88d1f781cfaba548",
+      sheet: blueprint,
+      hooks: {
+        record: [window.emailValidationHook]
+      },
+      guide: {
+        title: "Import Guide", // Title of the guide sidebar
+        steps: [ // Array of steps to display in the guide
+          {
+            title: "Step 1", // Title of the step
+            description: "Begin by uploading your file. Ensure it's in CSV, XLS, or XLSX format.", // Description for the step
+          },
+          {
+            title: "Step 2",
+            description: "Match your columns to the fields provided. Make sure all required fields are matched.",
+          },
+          {
+            title: "Step 3",
+            description: "Review any errors and make necessary corrections directly within the portal.",
+          },
+          {
+            title: "Step 4",
+            description: "Submit your data once all errors are resolved. You'll receive a confirmation once the data is successfully imported.",
+          }
+        ]
+      },
+      onSubmit: async ({ sheet }) => {
+        const data = await sheet.allData()
+        console.log('onSubmit', data)
+      },
+      spaceBody: {
+        namespace: "portal",
+      },
+    })
+  }
+</script>
 </body>
 </html>
