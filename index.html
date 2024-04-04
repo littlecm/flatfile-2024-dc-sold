@@ -12,10 +12,10 @@
   <script>
     window.onload = function() {
       FlatFileJavaScript.startFlatfile({
-        publishableKey: "pk_2ea17d18da7e4a2c88d1f781cfaba548",
+        publishableKey: "XXX",
         sheet: blueprint,
         hooks: {
-          record: (records) => window.emailValidationHook(records)
+          record: (record) => window.emailValidationHook(record)
         },
         onSubmit: async ({ sheet }) => {
           const data = await sheet.allData()
