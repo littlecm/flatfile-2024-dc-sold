@@ -1,21 +1,26 @@
 <html>
-  <head>
+<head>
   <script src="https://unpkg.com/@flatfile/javascript@^0.3.1/dist/index.js"></script>
   <script src="./blueprint.js"></script>
+  <script src="./emailValidationHook.js"></script>
   <script>
-  window.onload = function() {
-    FlatFileJavaScript.startFlatfile({
-      publishableKey: "pk_2ea17d18da7e4a2c88d1f781cfaba548",
-      sheet: blueprint,
-      onSubmit: async ({ sheet }) => {
-        const data = await sheet.allData()
-        console.log('onSubmit', data)
-      },
-      spaceBody: {
-        namespace: "portal",
-      },
-    })
-  }
+    window.onload = function() {
+      FlatFileJavaScript.startFlatfile({
+        publishableKey: "pk_2ea17d18da7e4a2c88d1f781cfaba548",
+        sheet: blueprint,
+        hooks: {
+          // Add the record hook here
+          record: window.emailValidationHook
+        },
+        onSubmit: async ({ sheet }) => {
+          const data = await sheet.allData()
+          console.log('onSubmit', data)
+        },
+        spaceBody: {
+          namespace: "portal",
+        },
+      })
+    }
   </script>
-  </head>
+</head>
 </html>
