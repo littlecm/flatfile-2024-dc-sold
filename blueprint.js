@@ -61,7 +61,11 @@ const blueprint = {
     {
       "key": "email",
       "label": "Customer Email",
-      "type": "string"
+      "type": "string",
+      "validate": {
+        "rule": "/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/",
+        "message": "Please enter a valid email address"
+      }
     },
     {
       "key": "City",
